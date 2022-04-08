@@ -42,7 +42,6 @@ export default class Slider {
 	}
 
 	render() {
-
 		// запуск всплывающего окна на 3м слайде
 		try {
 			this.hanson = document.querySelector('.hanson');
