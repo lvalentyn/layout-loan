@@ -1,8 +1,8 @@
 import Slider from './slider';
 
 export default class MainSlider extends Slider {
-	constructor(page, btns) {
-		super(page, btns);
+	constructor(btns) {
+		super(btns);
 	}
 
 	showSlides(n) {
@@ -14,16 +14,15 @@ export default class MainSlider extends Slider {
 			this.slideIndex = this.slides.length;
 		}
 
-		// запуск всплывающего окна на 3м слайде
 		try {
-			this.hanson.style.opacity = '0'
+			this.hanson.style.opacity = '0';
 
-			if (n === 3) {
+			if (n == 3) {
 				this.hanson.classList.add('animated');
 				setTimeout(() => {
 					this.hanson.style.opacity = '1';
 					this.hanson.classList.add('slideInUp');
-				}, 3000)
+				}, 3000);
 			} else {
 				this.hanson.classList.remove('slideInUp');
 			}
@@ -41,14 +40,13 @@ export default class MainSlider extends Slider {
 	}
 
 	render() {
-		// запуск всплывающего окна на 3м слайде
 		try {
 			this.hanson = document.querySelector('.hanson');
 		} catch (e) { }
 
 		this.btns.forEach(item => {
 			item.addEventListener('click', () => {
-				this.plusSlides(1)
+				this.plusSlides(1);
 			});
 
 			item.parentNode.previousElementSibling.addEventListener('click', (e) => {
